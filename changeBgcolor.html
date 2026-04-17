@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <button class="button" style="background:red">Red</button>
+        <button class="button" style="background:blue">Blue</button>
+        <button class="button" style="background:pink">Pink</button>
+    </div>
+    <script>
+        let btn = document.querySelectorAll("button");
+        let body = document.querySelector("body");
+        //console.log(btn.value);
+       
+           document.addEventListener("click", function(e){
+           //console.log(e.target);
+           if(!e.target.matches("button")) return;
+              if(e.target.innerHTML == 'Red')
+              {
+                body.style.backgroundColor ="red";
+              }
+              else if(e.target.textContent == 'Blue')
+              {
+                console.log("blue")
+                body.style.backgroundColor ="blue";
+              }
+              else if(e.target.textContent == 'Pink')
+              {
+                console.log("pink");
+                body.style.backgroundColor ="pink";
+              }
+              else{
+                body.style.backgroundColor ="gray";
+              }
+
+        });
+        
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+	<style>
+	   .calculator{
+	   margin: 0 auto;
+    text-align: center;
+    border: 1px solid #000;
+    width: 30%;
+    padding: 40px;
+	   } 
+	   .cal_btn{
+	   display:grid;
+	   grid-template-columns:repeat(5,100px)
+	   }
+	   .cal_btn1{
+	   display:flex;
+	   flex-wrap: wrap;
+    gap: 15px;
+	margin-top:10px}
+	.cal_btn1 button{width:20%;}
+	</style>
+</head>
+<body>
+<div class="calculator">
+	<input type ="text" name ="input_box" value="" id ="input_box">
+	<!--<div class="cal_btn">
+		<button type="button" value ="1"> 1</button>
+		<button type="button" value ="2"> 2</button>
+		<button type="button" value ="3"> 3</button>
+		<button type="button" value ="4"> 4</button>
+		<button type="button" value ="5"> 5</button>
+		<button type="button" value ="6"> 6</button>
+		<button type="button" value ="7"> 7</button>
+		<button type="button" value ="8"> 8</button>
+		<button type="button" value ="9"> 9</button>
+		<button type="button" value ="0"> 0</button>
+		<button type="button" value ="+"> +</button>
+		<button type="button" value ="-"> -</button>
+		<button type="button" value ="*"> *</button>
+		<button type="button" value ="/"> /</button>
+	</div>-->
+	
+	<div class="cal_btn1">
+	<button type="button" value ="x" onclick="backspace(this.value)"> x</button>
+		<button type="button" value ="C" onclick="clear_all()"> c</button>
+		<button type="button" value ="1" onclick="press(this.value)"> 1</button>
+		<button type="button" value ="2" onclick="press(this.value)"> 2</button>
+		<button type="button" value ="3" onclick="press(this.value)"> 3</button>
+		<button type="button" value ="4" onclick="press(this.value)"> 4</button>
+		<button type="button" value ="5" onclick="press(this.value)"> 5</button>
+		<button type="button" value ="6" onclick="press(this.value)"> 6</button>
+		<button type="button" value ="7" onclick="press(this.value)"> 7</button>
+		<button type="button" value ="8" onclick="press(this.value)"> 8</button>
+		<button type="button" value ="9" onclick="press(this.value)"> 9</button>
+		<button type="button" value ="0" onclick="press(this.value)"> 0</button>
+		<button type="button" value ="+" onclick ="press(this.value)"> +</button>
+		<button type="button" value ="-" onclick ="press(this.value)"> -</button>
+		<button type="button" value ="*" onclick ="press(this.value)"> *</button>
+		<button type="button" value ="/" onclick ="press(this.value)"> /</button>
+		<button type="button" value ="=" onclick ="result()"> =</button>
+		
+	</div>
+	
+	
+</div>
+    
+</body>
+<script>
+function press(value)
+{
+let val= value;
+	let box = document.getElementById('input_box').value += val;
+}
+
+function clear_all()
+{
+	document.getElementById('input_box').value = "";
+}
+function backspace()
+{
+	let item = document.getElementById('input_box') ;
+	//console.log(item)
+	item.value = item.value.slice(0,-1);
+	
+}
+function add(value)
+{
+let val = value;
+let a = document.getElementById('input_box').value;
+console.log(a)
+document.getElementById('input_box').value += val;
+}
+function result()
+{
+	let a = eval(document.getElementById('input_box').value);
+	console.log(a)
+	document.getElementById('input_box').value = a;
+}
+</script>
+</html>
