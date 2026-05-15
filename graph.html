@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Canvas Bar Graph</title>
+</head>
+<body>
+
+<h2>Bar Graph using Canvas</h2>
+
+<canvas id="myCanvas" width="600" height="400"style="border:1px solid black;">
+</canvas>
+<script>
+let canvas = document.getElementById("myCanvas");
+let cxt = canvas.getContext("2d")
+let color = ["red","yellow","green","orange","blue"]
+let point = [50,80,200,100,150]
+//cxt.fillStyle ="red";
+//cxt.fillStyle ="blue";
+
+let x =30;
+for(let i=0; i< point.length;i++)
+{
+	barPoint = point[i];
+	//console.log(barPoint)
+	cxt.fillStyle = color[i];
+	cxt.fillRect(x,250-barPoint,90,barPoint);
+	
+	cxt.fillStyle ="black"
+	 cxt.fillText("Bar " + (i + 1), x, 260);
+	 x+= 100
+	 console.log(x)
+}
+
+
+
+</script>
+
+</body>
+</html>
