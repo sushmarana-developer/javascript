@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="num">
+
+    </div>
+    <script>
+    let arr =[30,40,20,90];
+    let num ='';
+    let new_arr = arr.join(" , ")
+    console.log(new_arr);
+    for(let i=0; i< arr.length;i++)
+    {
+    //console.log(arr[i]);
+    num += arr[i] +'<br>';
+    //console.log(new_arr);
+    }
+    //document.getElementById("num").innerHTML = num;
+    document.getElementById("num").innerHTML = new_arr;
+</script>
+</body>
+</html>
